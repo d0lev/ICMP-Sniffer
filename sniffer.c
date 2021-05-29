@@ -45,7 +45,7 @@ int handle_packet(const uint8_t *packet_buffer,uint16_t packet_length) {
         if(type < 11) {
         printf("Source IP : %s    Destination IP : %s   TYPE:  %s CODE: %u\n",source_ip_str,destination_ip_str,icmp_types[type],code);
         }
-        }
+      }
     }
      return 0;
 }
