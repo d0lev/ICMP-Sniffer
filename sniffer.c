@@ -21,7 +21,7 @@ const char *icmp_types[] = {"Echo Reply","Unassigned","Unassigned","Destination 
 int handle_packet(const uint8_t *packet_buffer,uint16_t packet_length) {
     //the first bytes of the packet is the ethernet header
     struct ethhdr* ethernet_header = (struct ethhdr*) packet_buffer;
-    // //check if the packet protocol is ip usnig ntohs to convert big endian to little endian
+    // check if the packet protocol is of IP type using ntohs to convert big endian to little endian
     if(ntohs(ethernet_header->h_proto) == ETH_P_IP) {
         //extract the ip header from the ethernet header
         struct iphdr* ip_header =  (struct iphdr*)(packet_buffer + sizeof(struct ethhdr));
